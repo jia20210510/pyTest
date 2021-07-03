@@ -1,0 +1,13 @@
+
+自定义allure报告的logo
+一，allure/2.13.7/config,在allure.yml配置文件中增加- custom-logo-plugin
+
+二,allure-2.14.0\plugins\custom-logo-plugin\static   打开style.css
+修改
+.side-nav__brand {
+  background: url('allu.jpg') no-repeat left center !important;
+  margin-left: 10px;
+  height: 200px;
+}
+
+图片像素大约 200X200,大小约18K

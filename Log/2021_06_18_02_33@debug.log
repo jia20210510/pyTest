@@ -1,0 +1,12 @@
+2021-06-18 02:33:52,580 [debug.py:88] [INFO]- --<<APP用户登录接口>>
+2021-06-18 02:33:52,580 [debug.py:95] [DEBUG]- 预期结果：{'status_code': 200, 'message': 'success', 'model': {'userCode': 'e1d31c81a02248488136dff33968b142', 'token': 'abc1234'}}
+2021-06-18 02:33:52,580 [debug.py:96] [DEBUG]- 实际结果：{'message': 'success', 'model': {'token': 'abc1234', 'userCode': 'e1d31c81a02248488136dff33968b142'}, 'status_code': 200}
+2021-06-18 02:33:52,580 [debug.py:102] [INFO]- --第一个断言OK
+2021-06-18 02:33:52,580 [debug.py:106] [INFO]- --第二个断言OK
+2021-06-18 02:33:52,611 [debug.py:113] [INFO]- --第三个断言OK
+2021-06-18 02:33:52,611 [debug.py:113] [INFO]- --第三个断言OK
+2021-06-18 02:33:52,626 [debug.py:88] [INFO]- --<<查询用户信息>>
+2021-06-18 02:33:52,626 [debug.py:95] [DEBUG]- 预期结果：{'status_code': 200, 'message': 'success'}
+2021-06-18 02:33:52,626 [debug.py:96] [DEBUG]- 实际结果：{'message': 'success', 'model': {'areaCode': 'CN', 'hobby': 'travel and street dance', 'name': 'jia', 'userCode': 'e1d31c81a02248488136dff33968b142'}, 'status_code': 200}
+2021-06-18 02:33:52,626 [debug.py:118] [INFO]- --第一个断言OK
+2021-06-18 02:33:52,626 [debug.py:122] [INFO]- ----第二个断言OK

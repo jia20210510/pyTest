@@ -1,0 +1,32 @@
+global_config:
+  base_url: http://127.0.0.1:9999
+test_login_data:
+  -
+    - name: APP用户登录接口  # 接口名称
+    - path: /login
+    - method: POST
+    - headers:
+          Content-Type: application/json
+          token: &token abc1234
+    - data:
+          account: 031508505A484D20634154E6EE3C0781 # 13662566067
+          password: F379EAF3C831B04DE153469D1BEC345E # 666666
+          areaCode: CN
+    - validate: # 接口验证
+          status_code: 200
+          message: 'success'
+          model:
+              userCode: 'e1d31c81a02248488136dff33968b142'
+              token: 'abc1234'
+  -
+    - name: 查询用户信息
+    - path: /getUserInfo
+    - method: POST
+    - headers:
+          token: *token
+          Content-Type: application/json
+    - data:
+          userCode: e1d31c81a02248488136dff33968b142
+    - validate:
+          status_code: 200
+          message: 'success'

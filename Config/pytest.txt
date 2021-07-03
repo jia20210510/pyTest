@@ -1,0 +1,17 @@
+
+# this is global config file ,content must be ANSI code,file name must be pytest.ini
+# so recommend take file to project root directory
+
+
+[pytest]
+addopts = -vs --alluredir ../report/temp
+testpaths = ../test_case
+python_files = test_*.py
+python_classes = Test*
+python_functions = test
+markers =
+    smoke: 
+    retest:
+
+
+

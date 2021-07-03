@@ -1,0 +1,31 @@
+global_config:
+  base_url: http://127.0.0.1:9999
+  userCode:  &userCode e1d31c81a02248488136dff33968b142
+test_login_data:
+- name: µÇÂ¼
+- path: /login
+- method: POST
+- headers:
+    Content-Type: application/json
+    token: abc1234
+- data:
+    account: 031508505A484D20634154E6EE3C0781
+    areaCode: CN
+    password: F379EAF3C831B04DE153469D1BEC345E
+- validate:
+    message: success
+    model:
+      token: abc1234
+      userCode: e1d31c81a02248488136dff33968b142
+    status_code: 200
+- name: "\u7528\u6237"
+- path: /getUserInfo
+- method: POST
+- headers:
+    Content-Type: application/json
+    token: abc1234
+- data:
+    userCode: *userCode
+- validate:
+    message: success
+    status_code: 200

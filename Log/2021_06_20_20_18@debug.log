@@ -1,0 +1,16 @@
+2021-06-20 20:18:11,014 [common_data_driven.py:90] [INFO]- 请求参数URL:http://127.0.0.1:9999/login, method:POST
+2021-06-20 20:18:11,015 [common_data_driven.py:91] [INFO]- 请求参数data:{"account": "031508505A484D20634154E6EE3C0781", "password": "F379EAF3C831B04DE153469D1BEC345E", "areaCode": "CN"}, head:{"Content-Type": "application/json", "token": "abc1234"}
+2021-06-20 20:18:11,046 [common_data_driven.py:124] [INFO]- --<<APP用户登录接口>>
+2021-06-20 20:18:11,046 [common_data_driven.py:131] [DEBUG]- --预期结果：{'status_code': 200, 'message': 'success', 'model': {'userCode': 'e1d31c81a02248488136dff33968b142', 'token': 'abc1234'}}
+2021-06-20 20:18:11,047 [common_data_driven.py:132] [DEBUG]- --实际结果：{'message': 'success', 'model': {'token': 'abc1234', 'userCode': 'e1d31c81a02248488136dff33968b142'}, 'status_code': 200}
+2021-06-20 20:18:11,047 [common_data_driven.py:137] [INFO]- --status_code--断言OK
+2021-06-20 20:18:11,047 [common_data_driven.py:140] [INFO]- --message------断言OK
+2021-06-20 20:18:11,047 [common_data_driven.py:147] [INFO]- --model-----断言OK
+2021-06-20 20:18:11,047 [common_data_driven.py:147] [INFO]- --model-----断言OK
+2021-06-20 20:18:11,056 [common_data_driven.py:90] [INFO]- 请求参数URL:http://127.0.0.1:9999/getUserInfo, method:POST
+2021-06-20 20:18:11,056 [common_data_driven.py:91] [INFO]- 请求参数data:{"userCode": "e1d31c81a02248488136dff33968b142"}, head:{"token": "abc1234", "Content-Type": "application/json"}
+2021-06-20 20:18:11,061 [common_data_driven.py:124] [INFO]- --<<查询用户信息>>
+2021-06-20 20:18:11,061 [common_data_driven.py:131] [DEBUG]- --预期结果：{'status_code': 200, 'message': 'success'}
+2021-06-20 20:18:11,061 [common_data_driven.py:132] [DEBUG]- --实际结果：{'message': 'success', 'model': {'areaCode': 'CN', 'hobby': 'travel and street dance', 'name': 'jia', 'userCode': 'e1d31c81a02248488136dff33968b142'}, 'status_code': 200}
+2021-06-20 20:18:11,062 [common_data_driven.py:152] [INFO]- --status_code----断言OK
+2021-06-20 20:18:11,062 [common_data_driven.py:156] [INFO]- ----message------断言OK

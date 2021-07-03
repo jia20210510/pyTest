@@ -1,0 +1,9 @@
+httprunner
+python 3.x下安装两个
+pip install httprunner
+pip install har2case    # 作用 har 转yaml/json
+postman发送请求，filler抓包后导出格式选择httpArchive v1.2,生成har文件
+har2case xxx.har -2j   # 转json
+har2case xxx.har -2y  # 在har文件目录输入命令转为yaml
+har2case XXXX.yml    # change to  .py file
+hrun upInfo.yml  # 运行YAML文件测试用例

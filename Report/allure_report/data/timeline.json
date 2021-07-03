@@ -1,0 +1,52 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "WIN10-jjia",
+    "children" : [ {
+      "name" : "4352-MainThread",
+      "children" : [ {
+        "name" : "用例名:{'name': 'APP用户登录接口'}",
+        "uid" : "ae61a3cadc82f216",
+        "parentUid" : "b74b64eeb99f2ba51492463aa56f6581",
+        "status" : "passed",
+        "time" : {
+          "start" : 1624191491015,
+          "stop" : 1624191491047,
+          "duration" : 32
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'data': {'account': '031508505A484D20634154E6EE3C0781', 'password': 'F379EAF3C831B04DE153469D1BEC345E', 'areaCode': 'CN'}}", "{'headers': {'Content-Type': 'application/json', 'token': 'abc1234'}}", "{'method': 'POST'}", "{'path': '/login'}", "{'name': 'APP用户登录接口'}", "{'validate': {'status_code': 200, 'message': 'success', 'model': {'userCode': 'e1d31c81a02248488136dff33968b142', 'token': 'abc1234'}}}" ]
+      }, {
+        "name" : "用例名:{'name': '查询用户信息'}",
+        "uid" : "1a22f659d9b28e2e",
+        "parentUid" : "b74b64eeb99f2ba51492463aa56f6581",
+        "status" : "passed",
+        "time" : {
+          "start" : 1624191491056,
+          "stop" : 1624191491063,
+          "duration" : 7
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'data': {'userCode': 'e1d31c81a02248488136dff33968b142'}}", "{'headers': {'token': 'abc1234', 'Content-Type': 'application/json'}}", "{'method': 'POST'}", "{'path': '/getUserInfo'}", "{'name': '查询用户信息'}", "{'validate': {'status_code': 200, 'message': 'success'}}" ]
+      }, {
+        "name" : "test_issue",
+        "uid" : "837c61c38d165be5",
+        "parentUid" : "b74b64eeb99f2ba51492463aa56f6581",
+        "status" : "passed",
+        "time" : {
+          "start" : 1624191491071,
+          "stop" : 1624191491071,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "b74b64eeb99f2ba51492463aa56f6581"
+    } ],
+    "uid" : "1059aaf82b7626d615b0e3cdcf7e2adb"
+  } ]
+}

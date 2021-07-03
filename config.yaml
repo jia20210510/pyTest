@@ -1,0 +1,17 @@
+#url:
+#    base_url: http://127.0.0.1:9999 #基于flask自定义的服务环境
+##全局日志信息配置
+#log:
+#    log_name: log_
+#    file_log_level: info
+#    file_log_format: '[%(asctime)s] %(filename)s-> %(funcName)s line: %(lineno)d'
+#    console_log_level: info
+#    confole_log_format: '[%(asctime)s] %(filename)s-> %(funcName)s line: %(lineno)d'
+##全局报告名称设置
+#Report:
+#    report_name: report_
+##默认用户名和密码
+#default_login:
+#    username:
+#    password:
+
