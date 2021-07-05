@@ -1,4 +1,4 @@
 # pyTest
-this is automatic interface project
+this interface project on a  home computer
 
 frame: python+pytest+jenkins
