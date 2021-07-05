@@ -15,12 +15,12 @@ import pytest
 import requests
 import allure
 from Config import log
-from Common import yaml_methods
+from Common import file_method
 from allure_commons.types import LinkType
 
 logger = log.log_execute('debug_logger')
 # test_data = yaml_methods.YamlMethod.read_yaml('D:/PycharmProjects/socketAuto/Data/yaml88.yaml')
-test_data = yaml_methods.YamlMethod.read_yaml('E:/PycharmProject/pyTest/Data/yaml88.yaml')
+test_data = file_method.YamlMethod.read_yaml('E:/PycharmProject/pyTest/Data/yaml88.yaml')
 
 
 @allure.suite('登录模块')

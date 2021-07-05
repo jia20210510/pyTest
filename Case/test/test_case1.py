@@ -56,6 +56,7 @@ from allure_commons.types import LinkType
 # 方法二 body = resp.json(), requests库中json方法
 """
 
+
 # 多个.py文件只执行一次
 def setup_module():
     print('\n------**初始化模块**------')

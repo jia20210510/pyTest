@@ -1,5 +1,6 @@
 global_config:
   base_url: http://127.0.0.1:9999
+  usercode: &usercode e1d31c81a02248488136dff33968b142
 test_login_data:
   -
     - name: APP用户登录接口  # 接口名称
@@ -26,7 +27,7 @@ test_login_data:
           token: *token
           Content-Type: application/json
     - data:
-          userCode: e1d31c81a02248488136dff33968b142
+          userCode: *usercode
     - validate:
           status_code: 200
           message: 'success'

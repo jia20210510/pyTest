@@ -1,7 +1,0 @@
-INFO     debug_logger:common_data_driven.py:90 请求参数URL:http://127.0.0.1:9999/getUserInfo, method:POST
-INFO     debug_logger:common_data_driven.py:91 请求参数data:{"userCode": "e1d31c81a02248488136dff33968b142"}, head:{"token": "abc1234", "Content-Type": "application/json"}
-INFO     debug_logger:common_data_driven.py:124 --<<查询用户信息>>
-DEBUG    debug_logger:common_data_driven.py:131 --预期结果：{'status_code': 200, 'message': 'success'}
-DEBUG    debug_logger:common_data_driven.py:132 --实际结果：{'message': 'success', 'model': {'areaCode': 'CN', 'hobby': 'travel and street dance', 'name': 'jia', 'userCode': 'e1d31c81a02248488136dff33968b142'}, 'status_code': 200}
-INFO     debug_logger:common_data_driven.py:152 --status_code----断言OK
-INFO     debug_logger:common_data_driven.py:156 ----message------断言OK

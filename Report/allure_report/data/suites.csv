@@ -1,6 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Sun Jun 20 20:18:11 CST 2021","Sun Jun 20 20:18:11 CST 2021","0","Common","登录模块","TestApi","","","test_issue","
-        函数下加注释，相当于allure.description,也是用于在报告中描述测试用例的测试行为
-        "
-"passed","Sun Jun 20 20:18:11 CST 2021","Sun Jun 20 20:18:11 CST 2021","32","Common","登录模块","TestApi","","","用例名:{'name': 'APP用户登录接口'}",""
-"passed","Sun Jun 20 20:18:11 CST 2021","Sun Jun 20 20:18:11 CST 2021","7","Common","登录模块","TestApi","","","用例名:{'name': '查询用户信息'}",""

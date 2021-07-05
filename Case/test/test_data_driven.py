@@ -15,11 +15,11 @@ import pytest
 import requests
 import allure
 from Config import log
-from Common import yaml_methods
+from Common import file_method
 
 logger =log.log_execute('debug_logger')
 # test_data = yaml_methods.YamlMethod.read_yaml('D:/PycharmProjects/socketAuto/data/yaml88.yaml')
-test_data = yaml_methods.YamlMethod.read_yaml('E:/PycharmProject/pyTest/Data/yaml88.yaml')
+test_data = file_method.FilesMethod.read_yaml('E:/PycharmProject/pyTest/Data/yaml88.yaml')
 
 
 class TestApi:
@@ -33,6 +33,19 @@ class TestApi:
     last_url = ''
     last_method = ''
     last_title = ''
+
+    @classmethod
+    def setup_class(cls):
+        """
+        清除报告缓存文件temp
+        如果有文件夹不存在就创建，存在就清空！
+        :return:
+        """
+        temp_path = 'E:/PycharmProject/pyTest/Report/temp'
+        en_text = 'system = WIN10\npython = 3.8.8\nallure = 2.9.43\npytest = 6.2.4\nhtml = 3.1.1\nrequest = 2.25.1\n' \
+                  'flask = 2.0.1\nordering = 0.6\nrerunfailures = 10.0'
+        file_method.FilesMethod.clean_dir(temp_path)
+        file_method.FilesMethod.write_file(temp_path+'/environment.properties', en_text)
 
     # 读取用例
     @allure.severity(allure.severity_level.NORMAL)
