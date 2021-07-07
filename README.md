@@ -1,4 +1,4 @@
 # pyTest
-this interface project on a  home computer
+this is project on home
 
 frame: python+pytest+jenkins
