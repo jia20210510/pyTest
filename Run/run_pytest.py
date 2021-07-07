@@ -33,13 +33,13 @@ import pytest, os
  # hookapi_disins,数值数据: 1
  """
 
-# if __name__ == '__main__':
-#     # 主函数
-#     pytest.main(['-s', '../Case/test/debug.py' ])
-
-
 if __name__ == '__main__':
-    # 控制台生成测试报告
-    pytest.main(['-s', '../Common/common_data_driven.py'])
-    os.system('allure generate ../Temp -o ../Report/allure_report --clean')
+    # 主函数
+    pytest.main(['-s', '../Case/test/debug.py'])
+
+
+# if __name__ == '__main__':
+#     # 控制台生成测试报告
+#     pytest.main(['-s', '../Common/common_data_driven.py'])
+#     os.system('allure generate ../Temp -o ../Report/allure_report --clean')
 

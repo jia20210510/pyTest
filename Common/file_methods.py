@@ -1,7 +1,7 @@
 """
 @version: python3.8
 @project:socketAuto
-@file:   file_method.py
+@file:   file_methods.py
 @date:   2021/6/3 11:52
 @Author: jia
 @Desc: 文件的增删读写
@@ -20,7 +20,7 @@ import shutil
 """
 
 
-class FilesMethod:
+class FileMethod:
 
     # 清除文件夹
     @classmethod
@@ -75,7 +75,7 @@ class FilesMethod:
 
 if __name__ == '__main__':
     p_name = 'pyTest'
-    FilesMethod.get_project_path(p_name)
+    FileMethod.get_project_path(p_name)
 
     # d_path = 'E:/PycharmProject/pyTest/Report/temp'
     # FilesMethod.clean_dir(d_path)
