@@ -35,7 +35,8 @@ import pytest, os
 
 if __name__ == '__main__':
     # 主函数
-    pytest.main(['-s', '../Case/test/debug.py'])
+    # pytest.main(['-s', '../Case/test/test_HomeLink.py'])
+    pytest.main(['-s', '../Common/assert.py'])
 
 
 # if __name__ == '__main__':

@@ -27,7 +27,6 @@ def log_execute(loggers):
     debug_log = os.path.join(log_dir + now_time+'debug.log').replace("\\", '/')
     # email_log = os.path.join(log_dir + now_time+'email.log').replace("\\", '/')
     # db_log = os.path.join(log_dir + now_time+'db.log').replace("\\", '/')
-    print('log_dir', log_dir)
     print('debug_log', debug_log)
     """
     目录为空时创建目录

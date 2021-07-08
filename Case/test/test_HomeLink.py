@@ -18,8 +18,9 @@ from Common import file_methods
 from requests_toolbelt.multipart.encoder import MultipartEncoder
 
 logger = log.log_execute('debug_logger')
-test_data = file_methods.FileMethod.read_yaml('D:/PycharmProjects/socketAuto/Data/homelink_case.yaml')
-# test_data = yaml_methods.YamlMethod.read_yaml('E:/PycharmProject/pyTest/Data/yaml88.yaml')
+# test_data = file_methods.FileMethod.read_yaml('D:/PycharmProjects/socketAuto/Data/homelink_case.yaml')
+test_data = file_methods.FileMethod.read_yaml('E:/PycharmProject/pyTest/Data/homelink_case.yaml')
+
 
 
 class TestHomeLink:
@@ -96,7 +97,7 @@ class TestHomeLink:
             print('self.files--', self.files, type(self.files))
 
         # 参数
-        if 'multipart/form-data' in headers['Content-Type']:
+        if 'multipart/form-data' == headers['Content-Type']:
             self.last_data = MultipartEncoder(
                 fields={
                     'img': ('scare.jpg', open(self.files, 'rb'), 'image/jpg'),
@@ -106,15 +107,16 @@ class TestHomeLink:
                 boundary='----WebKitFormBoundaryZR5EZPH1yDBju'
             )
             pass
-        elif 'multipart/form-data' not in headers['Content-Type']:
+        elif 'application/x-www-form-urlencoded' == headers['Content-Type']:
             self.last_data = data['data']
         else:
             print('self.last_data:', self.last_data, type(self.last_data))
-            logger.info('self.last_data: ' +str(self.last_data ) +', ' +str(type(self.last_data)))
+            logger.info('self.last_data: '+str(self.last_data)+', '+str(type(self.last_data)))
 
-        # 断言
+        # 预期结果
         if validate and isinstance(validate, dict):
             self.last_validate = validate
+            print('self.last_validate[vadidate]', self.last_validate['validate'])
         else:
             print('self.last_validate:', self.last_validate, type(self.last_validate))
 
@@ -126,7 +128,7 @@ class TestHomeLink:
         logger.debug('请求参数headers:\n' + json.dumps(self.last_headers))
 
         # 调用封装方法
-        self.assert_request(self.send_request())
+        # self.assert_request(self.send_request())
 
     # 发送不同请求
     @allure.step('发送请求')

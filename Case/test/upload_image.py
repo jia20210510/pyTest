@@ -12,6 +12,7 @@ from urllib3 import encode_multipart_formdata
 import requests
 
 host = "http://*.*.*.*:80/"
+
 def upload():
     url = "upload/public"
     params = {
@@ -26,16 +27,19 @@ def upload():
 
     try:
         filename="pic.jpeg"
-        file_path = "/Users/admin/Downloads/pic.jpeg"
+        file_path = 'E:/PycharmProject/pyTest/Data/mm.jpg'
         data['file']= (filename, open(file_path,'rb').read())
         encode_data = encode_multipart_formdata(data)
+        print('encode_data--',encode_data)
         data = encode_data[0]
+        print('data---',data)
         header['Content-Type'] = encode_data[1]
         r = requests.post(url=host + url, headers=header, data=data)
-        print(r)
+        # print(r)
         print("返回值：" + r.text)
     except Exception as e:
         print(e)
 
-if __name__ == "__main__":
+
+if __name__ == '__main__':
     upload()
