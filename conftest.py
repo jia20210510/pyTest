@@ -45,6 +45,7 @@ def login_dev():
     ：返回headInfo以供调用
     """
     url = 'http://192.168.3.52:9010/app/user-info/login'
+    url = 'https://app.pethin.com/app/user-info/login'
     init_headInfo = {"deviceCode": "768831dc21f44033a5c31d5ef3dc3b38", "client": "android", "token": "",
                         "apiName":"", "userCode": "", "odmId": "36ed7e5ae9a442418bfe5acc42fcaf1",
                         "odmName": "Home Linking", "language": "zh", "version": "1.0", "time": ""}
@@ -53,7 +54,7 @@ def login_dev():
                         'Content-Type': 'application/x-www-form-urlencoded'}
     data = {
         'account': '13662566067',
-        'password': '666666',
+        'password': '888888',
         'areaCode': 'CN'
     }
 

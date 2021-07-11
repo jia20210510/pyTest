@@ -1,9 +1,0 @@
-INFO     debug_logger:common_data_driven.py:90 请求参数URL:http://127.0.0.1:9999/login, method:POST
-INFO     debug_logger:common_data_driven.py:91 请求参数data:{"account": "031508505A484D20634154E6EE3C0781", "password": "F379EAF3C831B04DE153469D1BEC345E", "areaCode": "CN"}, head:{"Content-Type": "application/json", "token": "abc1234"}
-INFO     debug_logger:common_data_driven.py:124 --<<APP用户登录接口>>
-DEBUG    debug_logger:common_data_driven.py:131 --预期结果：{'status_code': 200, 'message': 'success', 'model': {'userCode': 'e1d31c81a02248488136dff33968b142', 'token': 'abc1234'}}
-DEBUG    debug_logger:common_data_driven.py:132 --实际结果：{'message': 'success', 'model': {'token': 'abc1234', 'userCode': 'e1d31c81a02248488136dff33968b142'}, 'status_code': 200}
-INFO     debug_logger:common_data_driven.py:137 --status_code--断言OK
-INFO     debug_logger:common_data_driven.py:140 --message------断言OK
-INFO     debug_logger:common_data_driven.py:147 --model-----断言OK
-INFO     debug_logger:common_data_driven.py:147 --model-----断言OK

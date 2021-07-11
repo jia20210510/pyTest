@@ -1,6 +1,6 @@
 global_config:
-    dev_base_url: http://192.168.3.52:9010
-    userCode: &userCode e1d31c81a02248488136dff33968b142
+    dev_base_url: https://app.pethin.com
+    userCode: &userCode 9cc4e1a8410d4eb9a4a961618c6a1841
 test_case:
   -
     - name: 获取用户基本信息
@@ -68,20 +68,20 @@ test_case:
     - data:
           userCode: *userCode
           content: this app is good # 反馈内容
-    - files: 'C:/Users/hleyf/Pictures/Saved Pictures/scare.jpg'
-    - validate:
-          status: 100002
-          message: 'success'
-
-  -
-    - name: 退出登录
-    - path: /app/user-info/outLogin
-    - method: POST
-    - headers:
-          Content-Type: application/x-www-form-urlencoded
-    - data:
-          userCode: *userCode
-    - files: None
+    - files: 'E:/PycharmProject/pyTest/Data/mm.jpg'
     - validate:
           status: 200
           message: 'success'
+
+#  -
+#    - name: 退出登录
+#    - path: /app/user-info/outLogin
+#    - method: POST
+#    - headers:
+#          Content-Type: application/x-www-form-urlencoded
+#    - data:
+#          userCode: *userCode
+#    - files: None
+#    - validate:
+#          status: 200
+#          message: 'success'
