@@ -35,14 +35,18 @@ class TestHomeLink:
     last_method = ''
     last_title = ''
 
-    # 清除temp缓存,并重新写入环境配置
+    # 关于临时文件temp
     def setup_class(self):
-        # temp_dir = 'D:/PycharmProjects/socketAuto/Report/temp'
 
+        # temp_dir = 'D:/PycharmProjects/socketAuto/Report/temp'
         temp_dir = 'E:/PycharmProject/pyTest/Report/temp'
 
-        en_text = 'baseUrl =  ' + self.base_url + '\nSystem.version = win10\nauthor = jia\npython = 3.8.0\n' \
-                                                  'pyTest = 6.2.4\nallure = 2.9.43\nflask = 2.0.1\nhtml = 3.1.1'
+        # allure报告中的环境配置变量
+        en_text = 'baseUrl =  ' + self.base_url + \
+                  '\nSystem.version = win10\nauthor = jia\npython = 3.8.0\n' \
+                  'pyTest = 6.2.4\nallure = 2.9.43\nflask = 2.0.1\nhtml = 3.1.1'
+
+        # 先清除后写入
         file_methods.FileMethod.clean_dir(temp_dir)
         file_methods.FileMethod.write_file(temp_dir + '/environment.properties', en_text)
 
@@ -68,19 +72,19 @@ class TestHomeLink:
         else:
             logger.debug("title:"+title+",type is"+type(title))
 
-        # 路径
+        # 请求地址
         if path and isinstance(path, str):
             self.last_url = self.base_url + path
         else:
             logger.debug("path:"+path+",type is "+type(path))
 
-        # 方法
+        # 方法名
         if method and isinstance(method, str):
             self.last_method = method
         else:
             logger.debug("method:"+method+",type is "+type(method))
 
-        # headers
+        # 请求头
         if headers and isinstance(headers, dict):
             # 取默认headInfo
             headInfo = login_dev[1]['headInfo']
