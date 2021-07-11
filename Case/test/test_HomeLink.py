@@ -18,13 +18,14 @@ from Common import send_request
 from urllib3 import encode_multipart_formdata
 
 logger = log.log_execute('debug_logger')
-# test_data = file_methods.FileMethod.read_yaml('D:/PycharmProjects/socketAuto/Data/homelink_case.yaml')
-test_data = file_methods.FileMethod.read_yaml('E:/PycharmProject/pyTest/Data/homelink_case.yaml')
+
 
 
 class TestHomeLink:
 
     # 初始化参数
+    # test_data = file_methods.FileMethod.read_yaml('D:/PycharmProjects/socketAuto/Data/homelink_case.yaml')
+    test_data = file_methods.FileMethod.read_yaml('E:/PycharmProject/pyTest/Data/homelink_case.yaml')
     base_url = test_data['global_config']['dev_base_url']
     case = test_data['test_case']
     last_validate = {}
