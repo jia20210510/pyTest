@@ -71,6 +71,22 @@ class FileMethod:
         with open(str(cls.get_project_path(project_name)+'extract.yaml.yaml.yml'), mode='r', encoding='utf-8') as rf:
             extract = yaml.load(rf.read(), Loader=yaml.FullLoader)
             return extract[one_name]
+        
+    # 修改yaml数据
+    @classmethod
+    def test_modify(cls, f_path, in_para, one_name, two_name):
+        """
+        修改YAML文件参数
+        f_path: 打开文件的路径
+        in_para: 输入的参数
+        one_name: 字典第一个key
+        two_name: 字典第二个kdy
+        """
+        with open(f_path) as f:
+            doc = yaml.safe_load(f)
+            doc[one_name][two_name] = in_para
+        with open(f_path, 'w') as wf:
+            yaml.safe_dump(doc, wf, allow_unicode=True)
 
 
 if __name__ == '__main__':
