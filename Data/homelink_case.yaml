@@ -1,5 +1,6 @@
 global_config:
-    dev_base_url: https://app.pethin.com
+    pro_base_url: https://app.pethin.com
+    dev_base_url: http://192.168.3.52:9010
     userCode: &userCode 9cc4e1a8410d4eb9a4a961618c6a1841
 test_case:
   -
