@@ -16,6 +16,7 @@ import json
 import time
 import allure
 from Config import log
+from Common import file_methods
 
 logger = log.log_execute('debug_logger')
 
@@ -25,6 +26,7 @@ logger = log.log_execute('debug_logger')
 def py_fixture(request):
     # 固定用法返回参数，其它test用方法名调用
     return request.param
+
 
 # 在每一个package的前后都执行一次，autouse默认为False,scope默认为func
 @pytest.fixture(scope="package", autouse=True)
@@ -44,28 +46,21 @@ def login_dev():
     ：登录后更新token, userCode, time, headInfo
     ：返回headInfo以供调用
     """
-    url = 'http://192.168.3.52:9010/app/user-info/login'
-    url = 'https://app.pethin.com/app/user-info/login'
-    init_headInfo = {"deviceCode": "768831dc21f44033a5c31d5ef3dc3b38", "client": "android", "token": "",
-                        "apiName":"", "userCode": "", "odmId": "36ed7e5ae9a442418bfe5acc42fcaf1",
-                        "odmName": "Home Linking", "language": "zh", "version": "1.0", "time": ""}
+    # 从测试用例取值
+    test_data = file_methods.FileMethod.read_yaml('../Data/homelink_case.yaml')
+    host = test_data['global_config']['dev_base_url']
+    url = host+'/app/user-info/login'
+    headers = test_data['global_config']['headers']
+    data = test_data['global_config']['login_data']
 
-    default_headers = {'headInfo': json.dumps(init_headInfo),
-                        'Content-Type': 'application/x-www-form-urlencoded'}
-    data = {
-        'account': '13662566067',
-        'password': '888888',
-        'areaCode': 'CN'
-    }
-
-    # 提取返回值token
-    res = requests.post(url, data=data, headers=default_headers)
+    # 提取返回值token，userCode
+    res = requests.post(url, data=data, headers=headers)
     json_res = json.loads(res.text)
     token = json_res['model']['token']
     userCode = json_res['model']['userCode']
 
     # headInfo转dic
-    json_headInfo = json.loads(default_headers['headInfo'])
+    json_headInfo = json.loads(headers['headInfo'])
     # 更新headInfo
     json_headInfo['token'] = token
     json_headInfo['userCode'] = userCode
@@ -73,8 +68,11 @@ def login_dev():
     now_format_time = time.strftime('%Y%m%d%H%M', now_time)
     json_headInfo['time'] = now_format_time
 
-    # 更新headers
-    headInfo = json.dumps(json_headInfo)
-    default_headers = {'headInfo': headInfo}
+    # 更新headers, content-type 默认为 application/x-www-form-urlencoded
+    headers['headInfo'] = json.dumps(json_headInfo)
 
-    return userCode, default_headers
+    return userCode, headers
+
+
+
+

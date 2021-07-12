@@ -1,7 +1,17 @@
 global_config:
     pro_base_url: https://app.pethin.com
     dev_base_url: http://192.168.3.52:9010
-    userCode: &userCode 9cc4e1a8410d4eb9a4a961618c6a1841
+    headers:
+        headInfo: '{"deviceCode": "768831dc21f44033a5c31d5ef3dc3b38", "client": "android", "token": "",
+                    "apiName":"", "userCode": "", "odmId": "36ed7e5ae9a442418bfe5acc42fcaf1",
+                    "odmName": "Home Linking", "language": "zh", "version": "1.0", "time": ""}'
+        Content-Type: application/x-www-form-urlencoded
+    login_data:
+        account: 18800000015
+        password: 123456
+        areaCode: CN
+    userCode: &userCode 454d3f4f945f40be98c28cfc29b39c6c
+
 test_case:
   -
     - name: 获取用户基本信息
@@ -69,7 +79,7 @@ test_case:
     - data:
           userCode: *userCode
           content: this app is good # 反馈内容
-    - files: 'E:/PycharmProject/pyTest/Data/mm.jpg'
+    - files: '../Data/mm.jpg'
     - validate:
           status: 200
           message: 'success'

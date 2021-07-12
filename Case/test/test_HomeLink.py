@@ -20,12 +20,10 @@ from urllib3 import encode_multipart_formdata
 logger = log.log_execute('debug_logger')
 
 
-
 class TestHomeLink:
 
     # 初始化参数
-    # test_data = file_methods.FileMethod.read_yaml('D:/PycharmProjects/socketAuto/Data/homelink_case.yaml')
-    test_data = file_methods.FileMethod.read_yaml('E:/PycharmProject/pyTest/Data/homelink_case.yaml')
+    test_data = file_methods.FileMethod.read_yaml('../Data/homelink_case.yaml')
     base_url = test_data['global_config']['dev_base_url']
     case = test_data['test_case']
     last_validate = {}
@@ -39,9 +37,7 @@ class TestHomeLink:
     # 关于临时文件temp
     def setup_class(self):
 
-        # temp_dir = 'D:/PycharmProjects/socketAuto/Report/temp'
-        temp_dir = 'E:/PycharmProject/pyTest/Report/temp'
-
+        temp_dir = '../Report/temp'
         # allure报告中的环境配置变量
         en_text = 'baseUrl =  ' + self.base_url + \
                   '\nSystem.version = win10\nauthor = jia\npython = 3.8.0\n' \
@@ -87,10 +83,11 @@ class TestHomeLink:
 
         # 请求头
         if headers and isinstance(headers, dict):
-            # 取默认headInfo
-            headInfo = login_dev[1]['headInfo']
-            headers['headInfo'] = headInfo
-            self.last_headers = headers
+            # 取登录后返回的默认head
+            default_headers = login_dev[1]
+            # 更新content-type
+            default_headers['Content-Type'] = headers['Content-Type']
+            self.last_headers = default_headers
         else:
             logger.debug("headers:"+headers+"type is "+str(type(headers)))
 
