@@ -27,34 +27,32 @@ test_case:
           message: 'success'
           model:
               userInfo:
-                  id: 1 #自增
-                  onlyCode:
-                  odmId: 1 #品牌商ID
-                  odmName: "蓝禾" # 品牌商名称
+                  id: 323 #自增
+                  onlyCode: *userCode
+                  odmId: 36ed7e5ae9a442418bfe5acc42fcaf1 #品牌商ID
+                  odmName: "Home Linking" # 品牌商名称
                   registerType: 1 # 注册类型(1:手机号 2:邮箱)
                   registerPlatform: 1 # 注册平台(1:APP注册 2:后台注册)
-                  userName: "admin"
-                  password: "123456"
-                  firstName: "A"
-                  nickName:   # 昵称
-                  phone: "15814551704"
-                  email: "15814551704@163.com"
+                  userName: "18800000015"
+                  password: "hide"
+                  firstName:
+                  nickName: 18800000015jia   # 昵称
+                  phone: "18800000015"
+                  email:
                   sex: 1 #性别(0:女 1:男)
-                  headImage: "http://oyolyj6wn.bkt.clouddn.com/1ccf62b7-2fa0-4b06-b5a9-aeafacb1c9f7.png" #/** APP用户头像
-                  country: "中国" #所属国家
-                  province: "广东省" # 所属省份
-                  city: "深圳市" # 所属城市
-                  area: "宝安区" # 地区/县级 */
+                  headImage: "'https://resources.pethin.com/user/202104/1618304721815-file.jpeg" #/** APP用户头像
+                  country: CN #所属国家
+                  province:  # 所属省份
+                  city:  # 所属城市
+                  area: None # 地区/县级 */
                   hobby: "运动" #  爱好 */
-                  hxId: "1" # 环信ID (IM第三方)
-                  hxAccount: "123456"# 环信账户 (IM第三方) */
+                  hxId: lhzm454d3f4f945f40be98c28cfc29b39c6c # 环信ID (IM第三方)
+                  hxAccount: lhzm454d3f4f945f40be98c28cfc29b39c6c # 环信账户 (IM第三方)
                   isOnLine: 1 # 是否在线(1:是 2:否) */
                   mesReceive: 1  #消息接收(1:开  2:关) */
                   mesPanel: 1  #消息面板(1:开 2:关) */
-                  language: 1 # 语言(1:中文 2:英语 3:日语) */
+                  language: en # 语言(1:中文 2:英语 3:日语) */
                   status: 1 # 状态(1:启用 2:冻结) */
-                  lastAccessTime: 1519544274000 #最近登录时间 */
-                  createTime: 1519544274000 # 创建时间 */
 
   -
     - name: 更新用户信息
