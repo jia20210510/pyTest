@@ -23,8 +23,9 @@ logger = log.log_execute('debug_logger')
 class TestHomeLink:
 
     # 初始化参数
-    test_data = file_methods.FileMethod.read_yaml('../Data/homelink_case.yaml')
-    base_url = test_data['global_config']['dev_base_url']
+    root_dir = file_methods.FileMethod.get_project_path('pyTest')
+    test_data = file_methods.FileMethod.read_yaml(root_dir+'Data/homelink_case.yaml')
+    base_url = test_data['global_config']['pro_base_url']
     case = test_data['test_case']
     last_validate = {}
     last_headers = {}
@@ -37,15 +38,14 @@ class TestHomeLink:
     # 关于临时文件temp
     def setup_class(self):
 
-        temp_dir = '../Report/temp'
         # allure报告中的环境配置变量
         en_text = 'baseUrl =  ' + self.base_url + \
                   '\nSystem.version = win10\nauthor = jia\npython = 3.8.0\n' \
                   'pyTest = 6.2.4\nallure = 2.9.43\nflask = 2.0.1\nhtml = 3.1.1'
 
         # 先清除后写入
-        file_methods.FileMethod.clean_dir(temp_dir)
-        file_methods.FileMethod.write_file(temp_dir + '/environment.properties', en_text)
+        file_methods.FileMethod.clean_dir(self.root_dir+"Report/temp")
+        file_methods.FileMethod.write_file(self.root_dir+"Report/temp/environment.properties", en_text)
 
     # 读取用例
     @allure.severity(allure.severity_level.BLOCKER)

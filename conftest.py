@@ -47,8 +47,9 @@ def login_dev():
     ：返回headInfo以供调用
     """
     # 从测试用例取值
-    test_data = file_methods.FileMethod.read_yaml('../Data/homelink_case.yaml')
-    host = test_data['global_config']['dev_base_url']
+    root_dir = file_methods.FileMethod.get_project_path('pyTest')
+    test_data = file_methods.FileMethod.read_yaml(root_dir+'Data/homelink_case.yaml')
+    host = test_data['global_config']['pro_base_url']
     url = host+'/app/user-info/login'
     headers = test_data['global_config']['headers']
     data = test_data['global_config']['login_data']

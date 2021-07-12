@@ -8,9 +8,9 @@ global_config:
         Content-Type: application/x-www-form-urlencoded
     login_data:
         account: 18800000015
-        password: 123456
+        password: 888888
         areaCode: CN
-    userCode: &userCode 454d3f4f945f40be98c28cfc29b39c6c
+    userCode: &userCode 159b138350344d92a5127367cc671bef # 454d3f4f945f40be98c28cfc29b39c6c
 
 test_case:
   -
@@ -27,32 +27,31 @@ test_case:
           message: 'success'
           model:
               userInfo:
-                  id: 323 #自增
                   onlyCode: *userCode
                   odmId: 36ed7e5ae9a442418bfe5acc42fcaf1 #品牌商ID
-                  odmName: "Home Linking" # 品牌商名称
-                  registerType: 1 # 注册类型(1:手机号 2:邮箱)
-                  registerPlatform: 1 # 注册平台(1:APP注册 2:后台注册)
+                  odmName: "Home Linking"                # 品牌商名称
+                  registerType: 1                        # 注册类型(1:手机号 2:邮箱)
+                  registerPlatform: 1                    # 注册平台(1:APP注册 2:后台注册)
                   userName: "18800000015"
                   password: "hide"
                   firstName:
-                  nickName: 18800000015jia   # 昵称
+                  nickName: 18800000015jia
                   phone: "18800000015"
                   email:
-                  sex: 1 #性别(0:女 1:男)
-                  headImage: "'https://resources.pethin.com/user/202104/1618304721815-file.jpeg" #/** APP用户头像
-                  country: CN #所属国家
-                  province:  # 所属省份
-                  city:  # 所属城市
-                  area: None # 地区/县级 */
-                  hobby: "运动" #  爱好 */
-                  hxId: lhzm454d3f4f945f40be98c28cfc29b39c6c # 环信ID (IM第三方)
+                  sex: 1                                #性别(0:女 1:男)
+                  headImage: "https://resources.pethin.com/user/202104/1618304721815-file.jpeg" #/** APP用户头像
+                  country: CN                           #所属国家
+                  province:                             # 所属省份
+                  city:                                 # 所属城市
+                  area: None                            # 地区/县级 */
+                  hobby: 运动                           #  爱好 */
+                  hxId: lhzm454d3f4f945f40be98c28cfc29b39c6c      # 环信ID (IM第三方)
                   hxAccount: lhzm454d3f4f945f40be98c28cfc29b39c6c # 环信账户 (IM第三方)
-                  isOnLine: 1 # 是否在线(1:是 2:否) */
-                  mesReceive: 1  #消息接收(1:开  2:关) */
-                  mesPanel: 1  #消息面板(1:开 2:关) */
-                  language: en # 语言(1:中文 2:英语 3:日语) */
-                  status: 1 # 状态(1:启用 2:冻结) */
+                  isOnLine: 1                                     # 是否在线(1:是 2:否)
+                  mesReceive: 1                                   #消息接收(1:开  2:关)
+                  mesPanel: 1                                     #消息面板(1:开 2:关)
+                  language: en                                    # 语言(1:中文 2:英语 3:日语)
+                  status: 1                                       # 状态(1:启用 2:冻结)
 
   -
     - name: 更新用户信息
@@ -82,15 +81,15 @@ test_case:
           status: 200
           message: 'success'
 
-#  -
-#    - name: 退出登录
-#    - path: /app/user-info/outLogin
-#    - method: POST
-#    - headers:
-#          Content-Type: application/x-www-form-urlencoded
-#    - data:
-#          userCode: *userCode
-#    - files: None
-#    - validate:
-#          status: 200
-#          message: 'success'
+  -
+    - name: 退出登录
+    - path: /app/user-info/outLogin
+    - method: POST
+    - headers:
+          Content-Type: application/x-www-form-urlencoded
+    - data:
+          userCode: *userCode
+    - files: None
+    - validate:
+          status: 200
+          message: 'success'
