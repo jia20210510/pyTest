@@ -22,11 +22,13 @@ logger = log.log_execute('debug_logger')
 
 class TestHomeLink:
 
-    # 初始化参数
+    # 读用例
     root_dir = file_methods.FileMethod.get_project_path('pyTest')
     test_data = file_methods.FileMethod.read_yaml(root_dir+'Data/homelink_case.yaml')
     base_url = test_data['global_config']['pro_base_url']
     case = test_data['test_case']
+
+    # 初始化参数
     last_validate = {}
     last_headers = {}
     last_data = {}
@@ -35,7 +37,7 @@ class TestHomeLink:
     last_method = ''
     last_title = ''
 
-    # 关于临时文件temp
+    # 重写临时文件temp
     def setup_class(self):
 
         # allure报告中的环境配置变量

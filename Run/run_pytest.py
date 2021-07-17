@@ -34,8 +34,8 @@ import pytest, os
  """
 
 if __name__ == '__main__':
-    # 主函数
-    pytest.main(['-s', '../Case/test/test_HomeLink.py'])
+    # 主函数执行
+    pytest.main(['-s', '../Case/test/test_case1.py'])
     # pytest.main(['-s', '../Common/assert_request.py'])
 
 
@@ -44,3 +44,7 @@ if __name__ == '__main__':
 #     pytest.main(['-s', '../Common/common_data_driven.py'])
 #     os.system('allure generate ../Temp -o ../Report/allure_report --clean')
 
+
+# Terminal下执行
+# pytest -s Case/test/test_case1.py  --alluredir=Report/temp
+# allure generate Report/temp -o Report/allure_report --clean

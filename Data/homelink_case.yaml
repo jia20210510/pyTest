@@ -38,7 +38,7 @@ test_case:
                   nickName: 18800000015jia
                   phone: "18800000015"
                   email:
-                  sex: 1                                #性别(0:女 1:男)
+                  sex: 0                                #性别(0:女 1:男)
                   headImage: "https://resources.pethin.com/user/202104/1618304721815-file.jpeg" #/** APP用户头像
                   country: CN                           #所属国家
                   province:                             # 所属省份
