@@ -11,11 +11,11 @@ run文件夹下配置pytest.ini可以自定义配置参数
 pip install -r requirement_plugin.txt 安装所有使用插件
 """
 
-import pytest, os
+import pytest
 
 """
  # -vs 详细输出；--reruns=2 失败重跑2次；-x 失败停止执行；-maxfail=2 失败2个就停止
- # -k 'xi' 只执行用例名包含字符xi的用例; -n 2 多线程运行
+ # -k 'xi and test' 只执行用例名包含字符xi和test的用例; -n 2 多线程运行
  # -m=smoke or retest 执行两种自定义标记的用例
  # pytest.main(['-vs', '-m=smoke or retest', '--reruns=2'])
  # pytest.main(['-s', '../Case', '--html=../Report/Report.html'])
@@ -35,7 +35,7 @@ import pytest, os
 
 if __name__ == '__main__':
     # 主函数执行
-    pytest.main(['-s', '../Case/test/test_case1.py'])
+    pytest.main(['-s', '-m=not smoke', '../Case/test/test_case1.py'])
     # pytest.main(['-s', '../Common/assert_request.py'])
 
 

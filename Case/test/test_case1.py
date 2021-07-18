@@ -132,11 +132,10 @@ class TestCase2:
         # hasattr(对象，字符串）：检查对象中是否有属性，有返回true
         assert hasattr(TestCase1, 'test_001')
 
-    @pytest.mark.skip(reason='暂时不执行')
     @pytest.mark.retest
     def test_03(self):
         print('--------TestCase2--执行test_03---------')
-        assert 1 == 2
+        assert 1 != 2
 
     # pyTest装饰器基本用法
     @pytest.mark.skipif(condition=1 < 2, reason='暂时不执行')
@@ -198,26 +197,3 @@ class TestCase2:
     @pytest.mark.parametrize("getlogins", data, indirect=False)
     def test_getlogin(self, getlogins):
         print(f"用户名：{getlogins['username']} 密码：{getlogins['password']}")
-
-    """
-        # 利用YAML文件数据驱动,yaml文件有几条测试用例就会执行几次，YAML相当于一个list数据列表
-        # @pytest.mark.parametrize('args', y_info)
-        # def test_yaml_driven(self, args):
-        #     url = args['api_request']['path']
-        #     name = args['api_name']
-        #     method = args['api_request']['method']
-        #     paramts = args['api_request']['parameters']
-        #     validate = args['api_validate']
-        #     if method == 'post':
-        #         server_resp = requests.post(url, json=paramts)
-        #         print('URL:', server_resp.url)
-        #         print('TEXT:', server_resp.text)
-        #         print("validate:", validate)
-        #         print("code:",server_resp.json())
-        #         for val in validate:
-        #             assert val['eq']['code'] == server_resp.json()['status']
-        #     elif method == 'get':
-        #         print('请求方法不对')
-        #     else:
-        #         pass
-        """
