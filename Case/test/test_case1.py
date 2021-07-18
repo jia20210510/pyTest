@@ -86,7 +86,7 @@ class TestCase1:
     @pytest.mark.flaky(reruns=2, reruns_delay=2)
     def test_009(self):
         print('\n------test_009------')
-        assert 1 == 2
+        assert 1 != 2
 
     # 调用conftest.py中的py_fixture方法，实现数据全局共享
     def test_08(self, py_fixture):
