@@ -6,7 +6,7 @@
 @file:   algorithm.py
 @date:   2021/10/8 15:30
 @Author: jia
-@Desc:
+@Desc: Python常用算法
 """
 import time
 start = time.perf_counter()
