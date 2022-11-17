@@ -14,7 +14,8 @@ this project is automatic interface !frame: pytest+allure+jenkins
 
 页面展示：
 
-![image](https://user-images.githubusercontent.com/83941545/202335106-c4c2b6f1-2fee-451e-8592-26d93ec4699e.png)
+![image](https://user-images.githubusercontent.com/83941545/202336674-4918d50c-21cf-4a9b-8aaf-e26ac24eed3e.png)
+
 ![image](https://user-images.githubusercontent.com/83941545/202335212-6a14b8a2-7546-4648-a90f-509ed603f9cf.png)
 
 
