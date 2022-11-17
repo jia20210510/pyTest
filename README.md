@@ -19,7 +19,7 @@ this project is automatic interface !frame: pytest+allure+jenkins
 ![image](https://user-images.githubusercontent.com/83941545/202335212-6a14b8a2-7546-4648-a90f-509ed603f9cf.png)
 
 
-## 安装环境：
+## 项目环境：
 
 System.version = win10
 
