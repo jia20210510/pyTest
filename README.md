@@ -35,4 +35,22 @@ flask = 2.0.1
 
 html = 3.1.1
 
+环境安装：
+
+pip install -r requirement_plugin.txt 安装所有使用插件
+
+requirement_plugin.txt内容如下：
+
+pytest
+
+pytest-html
+
+pytest-xdist
+
+pytest-ordering
+
+pytest-rerunfailures
+
+allure-pytest
+
 
